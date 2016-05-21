@@ -5,8 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script type="text/javascript" src="ripoff.js"></script>
     <style>
-        .editor
-        {
+        .editor {
             width: 500px;
             height: 500px;
             background-color: yellow;
@@ -22,7 +21,18 @@
 
 <!-- Make it content editable attribute true so that we can edit inside the div tag and also enable execCommand to edit content inside it.-->
 <div class="editor" contenteditable="true" spellcheck="false">
-        <h1>This is the text editor</h1><div><br></div><div><span style="text-decoration: underline;">asfdas</span></div><div><span style="font-weight: bold;">fasfasd</span></div><div><span style="font-style: italic;">asd</span></div><div><span style="font-style: italic;"><br></span></div><div><span style="font-weight: bold;">sadas</span></div><div><span style="font-style: italic; font-weight: bold; text-decoration: underline;">asdasd</span></div><h4><br></h4><div><span style="font-weight: bold; font-style: italic;">sdasd</span></div>
+    <h1>This is the text editor</h1>
+
+    <div><br></div>
+    <div><span style="text-decoration: underline;">asfdas</span></div>
+    <div><span style="font-weight: bold;">fasfasd</span></div>
+    <div><span style="font-style: italic;">asd</span></div>
+    <div><span style="font-style: italic;"><br></span></div>
+    <div><span style="font-weight: bold;">sadas</span></div>
+    <div><span style="font-style: italic; font-weight: bold; text-decoration: underline;">asdasd</span></div>
+    <h4><br></h4>
+
+    <div><span style="font-weight: bold; font-style: italic;">sdasd</span></div>
 </div>
 
 <div class="codeoutput">
@@ -32,27 +42,23 @@
 </div>
 
 <script>
-    window.addEventListener("load", function(){
+    window.addEventListener("load", function () {
         //first check if execCommand and contentEditable attribute is supported or not.
-        if(document.contentEditable != undefined && document.execCommand != undefined)
-        {
+        if (document.contentEditable != undefined && document.execCommand != undefined) {
             alert("HTML5 Document Editing API Is Not Supported");
         }
-        else
-        {
+        else {
             document.execCommand('styleWithCSS', false, true);
         }
     }, false);
 
     //underlines the selected text
-    function underline()
-    {
+    function underline() {
         document.execCommand("underline", false, null);
     }
 
     //makes the selected text as hyperlink.
-    function link()
-    {
+    function link() {
         var url = prompt("Enter the URL");
         document.execCommand("createLink", false, url);
     }
