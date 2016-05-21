@@ -26,10 +26,6 @@ $(document).ready(function() {
     printFormat("#buttons_2",'underline');
     printFormat("#buttons_2",'bold');
     printFormat("#buttons_2",'italic');
-
-
-	var html1='<div>ajdjajd<h1>jds</h1></div>';    
-    $("#buttons_2").append("<button onclick=\"insertHTML('"+html1+"');\">panel</button>");
 });
 
     function displayhtml()
@@ -43,7 +39,6 @@ $(document).ready(function() {
 		 var jiraMarkoutSource = jiraMarkoutSourceParser(html);
 		 document.getElementsByClassName("htmloutput")[0].textContent = jiraMarkoutSource;
     }
-	
 	
 	function jiraMarkoutSourceParser(str) {
 		str = parseNewlines(str);
